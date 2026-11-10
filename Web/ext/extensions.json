@@ -1,0 +1,290 @@
+[
+ {
+  "id": "aaron-bond.better-comments",
+  "name": "Better Comments",
+  "publisher": "aaron-bond",
+  "version": "3.1.1",
+  "desc": "Improve your code commenting by annotating with alert, informational, TODOs, and more!",
+  "icon": "aaron-bond.better-comments.png",
+  "readme": "aaron-bond.better-comments.md"
+ },
+ {
+  "id": "ms-vscode.cpptools",
+  "name": "C/C++",
+  "publisher": "ms-vscode",
+  "version": "1.35.5",
+  "desc": "C/C++ IntelliSense, debugging, and code browsing.",
+  "icon": "ms-vscode.cpptools.png",
+  "readme": "ms-vscode.cpptools.md"
+ },
+ {
+  "id": "ms-vscode.cpp-devtools",
+  "name": "C/C++ DevTools",
+  "publisher": "ms-vscode",
+  "version": "0.6.18",
+  "desc": "Enhanced development tools for C++ in VS Code",
+  "icon": "ms-vscode.cpp-devtools.png",
+  "readme": "ms-vscode.cpp-devtools.md"
+ },
+ {
+  "id": "ms-vscode.cpptools-extension-pack",
+  "name": "C/C++ Extension Pack",
+  "publisher": "ms-vscode",
+  "version": "1.5.1",
+  "desc": "Popular extensions for C++ development in Visual Studio Code.",
+  "icon": "ms-vscode.cpptools-extension-pack.png",
+  "readme": "ms-vscode.cpptools-extension-pack.md"
+ },
+ {
+  "id": "ms-vscode.cpptools-themes",
+  "name": "C/C++ Themes",
+  "publisher": "ms-vscode",
+  "version": "2.0.0",
+  "desc": "UI Themes for C/C++ extension.",
+  "icon": "ms-vscode.cpptools-themes.png",
+  "readme": "ms-vscode.cpptools-themes.md"
+ },
+ {
+  "id": "anthropic.claude-code",
+  "name": "Claude Code for VS Code",
+  "publisher": "Anthropic",
+  "version": "2.1.314",
+  "desc": "Claude Code for VS Code: Harness the power of Claude Code without leaving your IDE",
+  "icon": "anthropic.claude-code.png",
+  "readme": "anthropic.claude-code.md"
+ },
+ {
+  "id": "ms-vscode.cmake-tools",
+  "name": "CMake Tools",
+  "publisher": "ms-vscode",
+  "version": "1.24.42",
+  "desc": "Extended CMake support in Visual Studio Code",
+  "icon": "ms-vscode.cmake-tools.png",
+  "readme": "ms-vscode.cmake-tools.md"
+ },
+ {
+  "id": "formulahendry.code-runner",
+  "name": "Code Runner",
+  "publisher": "formulahendry",
+  "version": "0.12.2",
+  "desc": "Run C, C++, Java, JS, PHP, Python, Perl, Ruby, Go, Lua, Groovy, PowerShell, CMD, BASH, F#, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml, R, AppleScript, Elixir, VB.NET, Clojure, Haxe, Obj-C, Rust, Racket, Scheme, AutoHotkey, AutoIt, Kotlin, Dart, Pascal, Haskell, Nim, D, Lisp, Kit, V, SCSS, Sass, CUDA, Less, Fortran, Ring, Standard ML, Zig, Mojo, Erlang, SPWN, Pkl, Gleam",
+  "icon": "formulahendry.code-runner.png",
+  "readme": "formulahendry.code-runner.md"
+ },
+ {
+  "id": "ms-azuretools.vscode-containers",
+  "name": "Container Tools",
+  "publisher": "ms-azuretools",
+  "version": "2.5.3",
+  "desc": "Makes it easy to create, manage, and debug containerized applications.",
+  "icon": "ms-azuretools.vscode-containers.png",
+  "readme": "ms-azuretools.vscode-containers.md"
+ },
+ {
+  "id": "vscjava.vscode-java-debug",
+  "name": "Debugger for Java",
+  "publisher": "vscjava",
+  "version": "0.60.0",
+  "desc": "A lightweight Java debugger for Visual Studio Code",
+  "icon": "vscjava.vscode-java-debug.png",
+  "readme": "vscjava.vscode-java-debug.md"
+ },
+ {
+  "id": "vscjava.vscode-java-pack",
+  "name": "Extension Pack for Java",
+  "publisher": "vscjava",
+  "version": "0.31.2",
+  "desc": "Popular extensions for Java development that provides Java IntelliSense, debugging, testing, Maven/Gradle support, project management and more",
+  "icon": "vscjava.vscode-java-pack.png",
+  "readme": "vscjava.vscode-java-pack.md"
+ },
+ {
+  "id": "google.geminicodeassist",
+  "name": "Gemini Code Assist",
+  "publisher": "google",
+  "version": "2.107.0",
+  "desc": "AI-assisted development powered by Gemini",
+  "icon": "google.geminicodeassist.png",
+  "readme": "google.geminicodeassist.md"
+ },
+ {
+  "id": "donjayamanne.githistory",
+  "name": "Git History",
+  "publisher": "donjayamanne",
+  "version": "0.6.20",
+  "desc": "View git log, file history, compare branches or commits",
+  "icon": "donjayamanne.githistory.png",
+  "readme": "donjayamanne.githistory.md"
+ },
+ {
+  "id": "google.google-antigravity",
+  "name": "Google Antigravity",
+  "publisher": "google",
+  "version": "1.10.0",
+  "desc": "Bring Google's agent-first development platform to Visual Studio Code.",
+  "icon": "google.google-antigravity.png",
+  "readme": "google.google-antigravity.md"
+ },
+ {
+  "id": "vscjava.vscode-gradle",
+  "name": "Gradle for Java",
+  "publisher": "vscjava",
+  "version": "3.18.1",
+  "desc": "Manage Gradle Projects, run Gradle tasks and provide better Gradle file authoring experience in VS Code",
+  "icon": "vscjava.vscode-gradle.png",
+  "readme": "vscjava.vscode-gradle.md"
+ },
+ {
+  "id": "oracle.oracle-java",
+  "name": "Java",
+  "publisher": "Oracle",
+  "version": "27.0.0",
+  "desc": "Java Platform Extension for Visual Studio Code",
+  "icon": "oracle.oracle-java.png",
+  "readme": "oracle.oracle-java.md"
+ },
+ {
+  "id": "redhat.java",
+  "name": "Language Support for Java(TM) by Red Hat",
+  "publisher": "redhat",
+  "version": "1.58.0",
+  "desc": "Java Linting, Intellisense, formatting, refactoring, Maven/Gradle support and more...",
+  "icon": "redhat.java.png",
+  "readme": "redhat.java.md"
+ },
+ {
+  "id": "llvm-vs-code-extensions.lldb-dap",
+  "name": "LLDB DAP",
+  "publisher": "llvm-vs-code-extensions",
+  "version": "0.4.1",
+  "desc": "Debugging with LLDB in Visual Studio Code",
+  "icon": "llvm-vs-code-extensions.lldb-dap.png",
+  "readme": "llvm-vs-code-extensions.lldb-dap.md"
+ },
+ {
+  "id": "pkief.material-icon-theme",
+  "name": "Material Icon Theme",
+  "publisher": "PKief",
+  "version": "5.40.0",
+  "desc": "Material Design Icons for Visual Studio Code",
+  "icon": "pkief.material-icon-theme.png",
+  "readme": "pkief.material-icon-theme.md"
+ },
+ {
+  "id": "vscjava.vscode-maven",
+  "name": "Maven for Java",
+  "publisher": "vscjava",
+  "version": "0.46.0",
+  "desc": "Manage Maven projects, execute goals, generate project from archetype, improve user experience for Java developers.",
+  "icon": "vscjava.vscode-maven.png",
+  "readme": "vscjava.vscode-maven.md"
+ },
+ {
+  "id": "vscjava.vscode-java-dependency",
+  "name": "Project Manager for Java",
+  "publisher": "vscjava",
+  "version": "0.27.7",
+  "desc": "Manage Java projects in Visual Studio Code",
+  "icon": "vscjava.vscode-java-dependency.png",
+  "readme": "vscjava.vscode-java-dependency.md"
+ },
+ {
+  "id": "ms-python.vscode-pylance",
+  "name": "Pylance",
+  "publisher": "ms-python",
+  "version": "2026.4.1",
+  "desc": "A performant, feature-rich language server for Python in VS Code",
+  "icon": "ms-python.vscode-pylance.png",
+  "readme": "ms-python.vscode-pylance.md"
+ },
+ {
+  "id": "ms-python.python",
+  "name": "Python",
+  "publisher": "ms-python",
+  "version": "2026.10.0",
+  "desc": "Python language support with extension access points for IntelliSense (Pylance), Debugging (Python Debugger), linting, formatting, refactoring, unit tests, and more.",
+  "icon": "ms-python.python.png",
+  "readme": "ms-python.python.md"
+ },
+ {
+  "id": "ms-python.debugpy",
+  "name": "Python Debugger",
+  "publisher": "ms-python",
+  "version": "2026.6.0",
+  "desc": "Python Debugger extension using debugpy.",
+  "icon": "ms-python.debugpy.png",
+  "readme": "ms-python.debugpy.md"
+ },
+ {
+  "id": "ms-python.vscode-python-envs",
+  "name": "Python Environments",
+  "publisher": "ms-python",
+  "version": "1.40.0",
+  "desc": "Provides a unified python environment experience",
+  "icon": "ms-python.vscode-python-envs.png",
+  "readme": "ms-python.vscode-python-envs.md"
+ },
+ {
+  "id": "reditorsupport.r",
+  "name": "R",
+  "publisher": "REditorSupport",
+  "version": "3.2.2",
+  "desc": "R Extension for Visual Studio Code",
+  "icon": "reditorsupport.r.png",
+  "readme": "reditorsupport.r.md"
+ },
+ {
+  "id": "reditorsupport.r-syntax",
+  "name": "R Syntax",
+  "publisher": "REditorSupport",
+  "version": "0.1.5",
+  "desc": "R Synxtax Highlight for Visual Studio Code",
+  "icon": "reditorsupport.r-syntax.png",
+  "readme": "reditorsupport.r-syntax.md"
+ },
+ {
+  "id": "ms-vscode.vscode-serial-monitor",
+  "name": "Serial Monitor",
+  "publisher": "ms-vscode",
+  "version": "0.13.1",
+  "desc": "Send and receive text from serial ports.",
+  "icon": "ms-vscode.vscode-serial-monitor.png",
+  "readme": "ms-vscode.vscode-serial-monitor.md"
+ },
+ {
+  "id": "swiftlang.swift-vscode",
+  "name": "Swift",
+  "publisher": "swiftlang",
+  "version": "2.18.0",
+  "desc": "Swift Language Support for Visual Studio Code.",
+  "icon": "swiftlang.swift-vscode.png",
+  "readme": "swiftlang.swift-vscode.md"
+ },
+ {
+  "id": "vscjava.vscode-java-test",
+  "name": "Test Runner for Java",
+  "publisher": "vscjava",
+  "version": "0.47.0",
+  "desc": "Run and debug JUnit or TestNG test cases.",
+  "icon": "vscjava.vscode-java-test.png",
+  "readme": "vscjava.vscode-java-test.md"
+ },
+ {
+  "id": "ms-ceintl.vscode-language-pack-tr",
+  "name": "Turkish Language Pack for Visual Studio Code",
+  "publisher": "MS-CEINTL",
+  "version": "1.131.2026090407",
+  "desc": "Language pack extension for Turkish",
+  "icon": "ms-ceintl.vscode-language-pack-tr.png",
+  "readme": "ms-ceintl.vscode-language-pack-tr.md"
+ },
+ {
+  "id": "tonybaloney.vscode-pets",
+  "name": "vscode-pets",
+  "publisher": "tonybaloney",
+  "version": "1.36.0",
+  "desc": "Pets for your VS Code",
+  "icon": "tonybaloney.vscode-pets.png",
+  "readme": "tonybaloney.vscode-pets.md"
+ }
+]

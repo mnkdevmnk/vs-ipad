@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Dosyalar uygulamasında "iPad'imde > VS iPad" klasörü görünsün -->
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	<!-- Sistem menü öğeleri (Kes/Kopyala/Pencere…) Türkçe görünsün -->
+	<key>CFBundleDevelopmentRegion</key>
+	<string>tr</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>tr</string>
+		<string>en</string>
+	</array>
+	<key>CFBundleAllowMixedLocalizations</key>
+	<true/>
+	<key>UIStatusBarHidden</key>
+	<false/>
+	<!-- ESP32: Bluetooth ve yerel ağ (Wi-Fi) erişimi -->
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>ESP32 kartına Bluetooth ile kod yüklemek ve seri monitörü göstermek için.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Aynı Wi-Fi ağındaki ESP32 kartına kod yüklemek ve seri monitörü göstermek için.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+</dict>
+</plist>

@@ -1,0 +1,20 @@
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+*.ipa
+*.dSYM.zip
+*.dSYM
+# macOS
+.DS_Store
+# yerel test
+node_modules/
+
+# Kişisel VS Code profili (Mac'ten gömülür, GitHub'a gitmez: token/anahtar içerebilir)
+Web/profil/
+
+# Claude Code yerel ayarları
+.claude/
+_to_delete/

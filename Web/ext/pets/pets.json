@@ -1,0 +1,729 @@
+{
+"bunny": {
+"purple": [
+"idle",
+"lie",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"pink": [
+"idle",
+"lie",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"white": [
+"idle",
+"lie",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"gray": [
+"idle",
+"lie",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"cat": {
+"lightbrown": [
+"fall_from_grab",
+"idle",
+"land",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"wallclimb",
+"wallgrab",
+"with_ball"
+],
+"black": [
+"fall_from_grab",
+"idle",
+"land",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"wallclimb",
+"wallgrab",
+"with_ball"
+],
+"white": [
+"fall_from_grab",
+"idle",
+"land",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"wallclimb",
+"wallgrab",
+"with_ball"
+],
+"orange": [
+"fall_from_grab",
+"idle",
+"land",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"wallclimb",
+"wallgrab",
+"with_ball"
+],
+"brown": [
+"fall_from_grab",
+"idle",
+"land",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"wallclimb",
+"wallgrab",
+"with_ball"
+],
+"gray": [
+"fall_from_grab",
+"idle",
+"land",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"wallclimb",
+"wallgrab",
+"with_ball"
+]
+},
+"chicken": {
+"white": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"brown": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"clippy": {
+"green": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"black": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"brown": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"yellow": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"cockatiel": {
+"brown": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"gray": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"crab": {
+"red": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"deno": {
+"green": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"dog": {
+"black": [
+"idle",
+"lie",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"akita": [
+"idle",
+"lie",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"white": [
+"idle",
+"lie",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"brown": [
+"idle",
+"lie",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"red": [
+"idle",
+"lie",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"fox": {
+"white": [
+"idle",
+"lie",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"red": [
+"idle",
+"lie",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"frog": {
+"green": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"red": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"blue": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"horse": {
+"paint_brown": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"socks_black": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"magical": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"socks_brown": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"black": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"paint_black": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"paint_beige": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"warrior": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"white": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"brown": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"socks_beige": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"mod": {
+"purple": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"monkey": {
+"gray": [
+"idle",
+"run",
+"swipe",
+"walk",
+"with_ball"
+]
+},
+"morph": {
+"purple": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"panda": {
+"black": [
+"idle",
+"lie",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"brown": [
+"idle",
+"lie",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"raccoon": {
+"gray_jimothy": [
+"idle",
+"lie",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"gray": [
+"idle",
+"lie",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"rat": {
+"white": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"brown": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"gray": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"rocky": {
+"gray": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast"
+]
+},
+"rubber-duck": {
+"yellow": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"skeleton": {
+"green": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"with_ball"
+],
+"purple": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"with_ball"
+],
+"pink": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"with_ball"
+],
+"warrior": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"with_ball"
+],
+"orange": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"with_ball"
+],
+"white": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"with_ball"
+],
+"brown": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"with_ball"
+],
+"red": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"with_ball"
+],
+"yellow": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"with_ball"
+],
+"blue": [
+"idle",
+"run",
+"stand",
+"swipe",
+"walk",
+"with_ball"
+]
+},
+"snail": {
+"brown": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"snake": {
+"green": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"squirrel": {
+"purple": [
+"fall_from_grab",
+"idle",
+"land",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"wallclimb",
+"wallgrab",
+"with_ball"
+],
+"black": [
+"fall_from_grab",
+"idle",
+"land",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"wallclimb",
+"wallgrab",
+"with_ball"
+],
+"white": [
+"fall_from_grab",
+"idle",
+"land",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"wallclimb",
+"wallgrab",
+"with_ball"
+],
+"brown": [
+"fall_from_grab",
+"idle",
+"land",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"wallclimb",
+"wallgrab",
+"with_ball"
+],
+"gray": [
+"fall_from_grab",
+"idle",
+"land",
+"run",
+"stand",
+"swipe",
+"walk",
+"walk_fast",
+"wallclimb",
+"wallgrab",
+"with_ball"
+]
+},
+"totoro": {
+"gray": [
+"fall_from_grab",
+"idle",
+"land",
+"lie",
+"run",
+"swipe",
+"walk",
+"wallclimb",
+"wallgrab",
+"with_ball"
+]
+},
+"turtle": {
+"green": [
+"idle",
+"lie",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+],
+"orange": [
+"idle",
+"lie",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+},
+"zappy": {
+"yellow": [
+"idle",
+"run",
+"swipe",
+"walk",
+"walk_fast",
+"with_ball"
+]
+}
+}

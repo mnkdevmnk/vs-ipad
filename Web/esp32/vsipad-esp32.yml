@@ -1,0 +1,68 @@
+# VS iPad – ESP32 / RP2040 derleme (GitHub Actions, ücretsiz)
+# VS iPad, .vsipad/target.json dosyasını yazıp push edince çalışır; çıktıyı
+# "vsipad-builds" dalına builds/<commit>.json + .bin olarak koyar.
+name: VS iPad ESP32
+on:
+  push:
+    paths: ['.vsipad/target.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: vsipad-esp32
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: hedef
+        id: t
+        run: |
+          F=$(python3 -c "import json;print(json.load(open('.vsipad/target.json')).get('fqbn') or '')")
+          case "$F" in rp2040:*) echo "core=rp2040" >> "$GITHUB_OUTPUT";; *) echo "core=esp32" >> "$GITHUB_OUTPUT";; esac
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.arduino15
+            ~/Arduino/libraries
+          key: vsipad-arduino-${{ steps.t.outputs.core }}-v2
+      - name: arduino-cli
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=/usr/local/bin sh
+          arduino-cli config init --overwrite
+          if [ "${{ steps.t.outputs.core }}" = rp2040 ]; then
+            arduino-cli config add board_manager.additional_urls https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
+            arduino-cli core update-index
+            arduino-cli core install rp2040:rp2040
+          else
+            arduino-cli config add board_manager.additional_urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
+            arduino-cli core update-index
+            arduino-cli core install esp32:esp32@3.0.7
+          fi
+      - name: derle
+        run: python3 .github/vsipad/build.py
+        env:
+          SHA: ${{ github.sha }}
+      - name: sonucu yayımla
+        if: always()
+        run: |
+          set -e
+          [ -d vsipad-out ] || exit 0
+          git config user.name "VS iPad"
+          git config user.email "vsipad@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin vsipad-builds >/dev/null 2>&1; then
+            git fetch --depth 1 origin vsipad-builds
+            git worktree add ../builds origin/vsipad-builds -B vsipad-builds
+          else
+            git worktree add --orphan -b vsipad-builds ../builds
+          fi
+          mkdir -p ../builds/builds
+          cp -r vsipad-out/* ../builds/builds/
+          cd ../builds
+          # son 15 derlemeyi tut
+          ls -1t builds/*.json 2>/dev/null | tail -n +16 | while read f; do b=$(basename "$f" .json); git rm -rq --ignore-unmatch "builds/$b.json" "builds/$b" || true; done
+          git add -A
+          git commit -qm "derleme ${GITHUB_SHA::7}" || exit 0
+          git push -q origin vsipad-builds

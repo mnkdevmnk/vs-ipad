@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>VS iPad</title>
+<link rel="stylesheet" href="/cdn/jsd/npm/@vscode/codicons@0.0.36/dist/codicon.css" onerror="document.documentElement.classList.add('no-codicons')">
+<link rel="stylesheet" href="workbench.css">
+</head>
+<body class="theme-dark-modern">
+<div id="workbench">
+
+  <!-- ===== TITLE BAR ===== -->
+  <div id="titlebar">
+    <div class="tb-left">
+      <div class="tb-appicon" id="tbAppMenu" title="Uygulama menüsü (Dosya, Düzenle, Görünüm…)"><i class="codicon codicon-code"></i></div>
+      <div id="menubar">
+        <div class="menu-title" data-menu="file">File</div>
+        <div class="menu-title" data-menu="edit">Edit</div>
+        <div class="menu-title" data-menu="selection">Selection</div>
+        <div class="menu-title" data-menu="view">View</div>
+        <div class="menu-title" data-menu="go">Go</div>
+        <div class="menu-title" data-menu="run">Run</div>
+        <div class="menu-title" data-menu="terminal">Terminal</div>
+        <div class="menu-title" data-menu="help">Help</div>
+      </div>
+    </div>
+    <div class="tb-center">
+      <div class="tb-nav"><i class="codicon codicon-arrow-left" id="navBack"></i><i class="codicon codicon-arrow-right" id="navFwd"></i></div>
+      <div id="command-center"><i class="codicon codicon-search"></i><span id="cc-label">VS iPad</span></div>
+    </div>
+    <div class="tb-right">
+      <i class="codicon codicon-layout-sidebar-left tb-btn" id="tbToggleSidebar" title="Toggle Primary Side Bar (⌘B)"></i>
+      <i class="codicon codicon-layout-panel tb-btn" id="tbTogglePanel" title="Toggle Panel (⌘J)"></i>
+      <i class="codicon codicon-layout-sidebar-right-off tb-btn" id="tbToggleAux" title="Toggle AI Chat (Secondary Side Bar)"></i>
+      <i class="codicon codicon-layout tb-btn" id="tbLayout" title="Customize Layout..."></i>
+    </div>
+  </div>
+
+  <div id="main">
+    <!-- ===== ACTIVITY BAR ===== -->
+    <div id="activitybar">
+      <div class="ab-top">
+        <div class="ab-item active" data-view="explorer" title="Explorer (⇧⌘E)"><i class="codicon codicon-files"></i></div>
+        <div class="ab-item" data-view="search" title="Search (⇧⌘F)"><i class="codicon codicon-search"></i></div>
+        <div class="ab-item" data-view="scm" title="Source Control (⌃⇧G)"><i class="codicon codicon-source-control"></i></div>
+        <div class="ab-item" data-view="run" title="Run and Debug (⇧⌘D)"><i class="codicon codicon-debug-alt"></i></div>
+        <div class="ab-item" data-view="extensions" title="Extensions (⇧⌘X)"><i class="codicon codicon-extensions"></i></div>
+        <div class="ab-item" data-view="esp32" title="ESP32"><i class="codicon codicon-circuit-board"></i></div>
+        <div class="ab-item" data-view="claude" title="Claude (⌃⌘I)"><i class="codicon codicon-sparkle"></i></div>
+        <div class="ab-item" data-view="ag" title="Gemini · AG (⌃⌘G)"><i class="codicon codicon-star-full"></i></div>
+      </div>
+      <div class="ab-bottom">
+        <div class="ab-item" id="abAccount" title="Accounts"><i class="codicon codicon-account"></i></div>
+        <div class="ab-item" id="abManage" title="Manage"><i class="codicon codicon-settings-gear"></i></div>
+      </div>
+    </div>
+
+    <!-- ===== SIDE BAR ===== -->
+    <div id="sidebar">
+      <!-- Explorer -->
+      <div class="view" id="view-explorer">
+        <div class="view-header"><span>EXPLORER</span><div class="view-actions"><i class="codicon codicon-ellipsis" id="explorerMore"></i></div></div>
+        <div class="pane-header expanded" id="wsHeader">
+          <i class="codicon codicon-chevron-down twist"></i><span id="wsName">VS IPAD</span>
+          <div class="pane-actions">
+            <i class="codicon codicon-new-file" id="actNewFile" title="New File..."></i>
+            <i class="codicon codicon-new-folder" id="actNewFolder" title="New Folder..."></i>
+            <i class="codicon codicon-refresh" id="actRefresh" title="Refresh Explorer"></i>
+            <i class="codicon codicon-collapse-all" id="actCollapse" title="Collapse Folders in Explorer"></i>
+          </div>
+        </div>
+        <div class="tree" id="fileTree" tabindex="0"></div>
+        <div class="pane-header" id="outlineHeader"><i class="codicon codicon-chevron-right twist"></i><span>OUTLINE</span></div>
+        <div class="pane-header" id="timelineHeader"><i class="codicon codicon-chevron-right twist"></i><span>TIMELINE</span></div>
+        <div class="pane-header expanded hidden" id="petsHeader"><i class="codicon codicon-chevron-down twist"></i><span>VS CODE PETS</span>
+          <div class="pane-actions">
+            <i class="codicon codicon-add" id="petAdd" title="Pets: Spawn additional pet"></i>
+            <i class="codicon codicon-circle-large-outline" id="petBall" title="Pets: Throw ball"></i>
+            <i class="codicon codicon-trash" id="petClear" title="Pets: Remove all pets"></i>
+            <i class="codicon codicon-paintcan" id="petBg" title="Pets: Change background"></i>
+          </div>
+        </div>
+        <div class="pets-stage hidden" id="petsStage"></div>
+      </div>
+
+      <!-- Search -->
+      <div class="view hidden" id="view-search">
+        <div class="view-header"><span>SEARCH</span><div class="view-actions"><i class="codicon codicon-refresh" id="searchRefresh"></i><i class="codicon codicon-clear-all" id="searchClear"></i><i class="codicon codicon-collapse-all"></i></div></div>
+        <div class="search-box">
+          <div class="search-row">
+            <div class="input-wrap"><input id="searchInput" placeholder="Search" autocapitalize="off" autocorrect="off" spellcheck="false">
+              <div class="input-opts"><i class="codicon codicon-case-sensitive opt" id="optCase" title="Match Case"></i><i class="codicon codicon-whole-word opt" id="optWord" title="Match Whole Word"></i><i class="codicon codicon-regex opt" id="optRegex" title="Use Regular Expression"></i></div></div>
+          </div>
+          <div class="search-row">
+            <div class="input-wrap"><input id="replaceInput" placeholder="Replace" autocapitalize="off" autocorrect="off" spellcheck="false">
+              <div class="input-opts"><i class="codicon codicon-replace-all opt" id="replaceAllBtn" title="Replace All"></i></div></div>
+          </div>
+          <div class="search-msg" id="searchMsg"></div>
+        </div>
+        <div class="tree" id="searchResults"></div>
+      </div>
+
+      <!-- Source control -->
+      <div class="view hidden" id="view-scm">
+        <div class="view-header"><span>SOURCE CONTROL</span><div class="view-actions"><i class="codicon codicon-github" id="scmGithub" title="GitHub"></i></div></div>
+        <div id="scmRoot"></div>
+      </div>
+
+      <!-- ESP32 -->
+      <div class="view hidden" id="view-esp32">
+        <div class="view-header"><span>ESP32</span><div class="view-actions"><i class="codicon codicon-book" id="espGuide" title="Rehber"></i></div></div>
+        <div id="espRoot" class="esp-root"></div>
+      </div>
+
+      <!-- Claude -->
+      <div class="view hidden ag-view" id="view-claude">
+        <div class="view-header"><span>CLAUDE</span><div class="view-actions"><i class="codicon codicon-add" data-agent="claude" data-aa="new" title="New Chat"></i><i class="codicon codicon-history" data-agent="claude" data-aa="history" title="History"></i><i class="codicon codicon-settings-gear" data-agent="claude" data-aa="settings" title="Settings"></i></div></div>
+        <div id="claudeRoot" class="ag-root"></div>
+      </div>
+
+      <!-- Gemini · AG -->
+      <div class="view hidden ag-view" id="view-ag">
+        <div class="view-header"><span>GEMINI · AG</span><div class="view-actions"><i class="codicon codicon-add" data-agent="ag" data-aa="new" title="New Chat"></i><i class="codicon codicon-history" data-agent="ag" data-aa="history" title="History"></i><i class="codicon codicon-settings-gear" data-agent="ag" data-aa="settings" title="Settings"></i></div></div>
+        <div id="agRoot" class="ag-root"></div>
+      </div>
+
+      <!-- Run & Debug -->
+      <div class="view hidden" id="view-run">
+        <div class="view-header"><span>RUN AND DEBUG</span><div class="view-actions"><i class="codicon codicon-ellipsis"></i></div></div>
+        <div class="run-view">
+          <button class="btn-primary wide" id="runViewBtn">Run and Debug</button>
+          <p class="dim small">Aktif dosyayı derleyip çalıştırır. Kısayol: <b>⌘↵</b> veya <b>F5</b></p>
+          <div class="form-group">
+            <label>Active file</label>
+            <div id="runFileInfo" class="run-info">—</div>
+          </div>
+          <div class="form-group">
+            <label>Standard input (stdin)</label>
+            <textarea id="stdinBox" rows="6" placeholder="Program girdileri (her satır ayrı)…  Boş bırakırsan, program girdi okuyorsa terminalde sorulur." autocapitalize="off" autocorrect="off" spellcheck="false"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Program arguments</label>
+            <input id="argsBox" placeholder="örn: 5 input.txt" autocapitalize="off" autocorrect="off" spellcheck="false">
+          </div>
+          <div class="form-group">
+            <label>C++ / Java / C# servisi</label>
+            <select id="runnerSelect">
+              <option value="auto">Auto (Wandbox → Compiler Explorer)</option>
+              <option value="wandbox">Wandbox (online)</option>
+              <option value="godbolt">Compiler Explorer (online)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>C derleyicisi</label>
+            <select id="cRunnerSelect">
+              <option value="ask">Her çalıştırmada sor</option>
+              <option value="clang" class="clang-only">Clang 8 – gerçek LLVM (çevrimdışı)</option>
+              <option value="local">Yerel (çevrimdışı, hızlı)</option>
+              <option value="online">Online gcc (Wandbox / Compiler Explorer)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>C++ derleyicisi</label>
+            <select id="cppRunnerSelect">
+              <option value="ask">Her çalıştırmada sor</option>
+              <option value="clang">Clang++ 8 – yerel (çevrimdışı)</option>
+              <option value="online">Online g++ (Wandbox / Compiler Explorer)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Python</label>
+            <select id="pyRunnerSelect">
+              <option value="local">Yerel – Pyodide (çevrimdışı, interaktif input)</option>
+              <option value="remote">Online – CPython (Wandbox)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>C / C++ flags</label>
+            <input id="cflagsBox" placeholder="-Wall -std=gnu++17 -O0" autocapitalize="off" autocorrect="off" spellcheck="false">
+          </div>
+          <div class="form-group">
+            <label>Offline</label>
+            <div class="run-info" id="offlineInfo">—</div>
+            <button class="btn-secondary" id="prepareOfflineBtn"><i class="codicon codicon-cloud-download"></i> Çevrimdışı kullanım için indir</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extensions -->
+      <div class="view hidden" id="view-extensions">
+        <div class="view-header"><span>EXTENSIONS</span><div class="view-actions"><i class="codicon codicon-filter"></i><i class="codicon codicon-refresh"></i><i class="codicon codicon-ellipsis"></i></div></div>
+        <div class="search-box"><div class="input-wrap"><input id="extSearch" placeholder="Search Extensions in Marketplace" autocapitalize="off" autocorrect="off"></div></div>
+        <div class="pane-header expanded"><i class="codicon codicon-chevron-down twist"></i><span>INSTALLED</span><span class="badge" id="extCount">0</span></div>
+        <div id="extList"></div>
+      </div>
+    </div>
+    <div class="sash vertical" id="sashSide"></div>
+
+    <!-- ===== EDITOR + PANEL ===== -->
+    <div id="editor-and-panel">
+      <div id="editor-part">
+        <div id="tabs-bar">
+          <div id="tabs"></div>
+          <div id="editor-actions">
+            <span id="eaRunGroup" class="ea-run-group"><i class="codicon codicon-play ea-btn" id="eaRun" title="Run Code (⌘↵)"></i><i class="codicon codicon-chevron-down ea-btn ea-run-more" id="eaRunMore" title="Çalıştırma seçenekleri / derleyici"></i></span>
+            <i class="codicon codicon-debug-stop ea-btn hidden" id="eaStop" title="Stop (⇧F5)"></i>
+            <i class="codicon codicon-open-preview ea-btn hidden" id="eaPreview" title="Open Preview"></i>
+            <i class="codicon codicon-sparkle ea-btn" id="eaAskClaude" title="Claude'a sor – dosya, seçim ve hatalar panoya kopyalanır, Claude uygulaması açılır (⌃⌘K)"></i>
+            <i class="codicon codicon-split-horizontal ea-btn" title="Split Editor Right"></i>
+            <i class="codicon codicon-ellipsis ea-btn" id="eaMore" title="More Actions..."></i>
+          </div>
+        </div>
+        <div id="breadcrumbs"></div>
+        <div id="editor-container"></div>
+        <div id="md-preview" class="hidden"></div>
+        <div id="virtual-doc" class="hidden"></div>
+        <div id="watermark">
+          <div class="wm-logo"><i class="codicon codicon-code"></i></div>
+          <dl>
+            <div><dt>Show All Commands</dt><dd><kbd>⇧</kbd><kbd>⌘</kbd><kbd>P</kbd></dd></div>
+            <div><dt>Go to File</dt><dd><kbd>⌘</kbd><kbd>P</kbd></dd></div>
+            <div><dt>Find in Files</dt><dd><kbd>⇧</kbd><kbd>⌘</kbd><kbd>F</kbd></dd></div>
+            <div><dt>Run Code</dt><dd><kbd>⌘</kbd><kbd>↵</kbd></dd></div>
+            <div><dt>Toggle Terminal</dt><dd><kbd>⌃</kbd><kbd>`</kbd></dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="sash horizontal" id="sashPanel"></div>
+      <div id="panel">
+        <div id="panel-header">
+          <div id="panel-tabs">
+            <div class="ptab" data-ptab="problems">PROBLEMS <span class="badge hidden" id="problemsBadge">0</span></div>
+            <div class="ptab" data-ptab="output">OUTPUT</div>
+            <div class="ptab" data-ptab="debug">DEBUG CONSOLE</div>
+            <div class="ptab active" data-ptab="terminal">TERMINAL</div>
+            <div class="ptab" data-ptab="ports">PORTS</div>
+            <div class="ptab" data-ptab="serial">SERİ MONİTÖR</div>
+          </div>
+          <div id="panel-actions">
+            <span class="term-label" id="termLabel"><i class="codicon codicon-terminal"></i> zsh</span>
+            <i class="codicon codicon-add pa-btn" id="paNewTerm" title="New Terminal"></i>
+            <i class="codicon codicon-trash pa-btn" id="paClear" title="Clear"></i>
+            <i class="codicon codicon-debug-stop pa-btn hidden" id="paStop" title="Stop"></i>
+            <i class="codicon codicon-chevron-up pa-btn" id="paMax" title="Maximize Panel Size"></i>
+            <i class="codicon codicon-close pa-btn" id="paClose" title="Hide Panel"></i>
+          </div>
+        </div>
+        <div id="panel-body">
+          <div class="pview hidden" id="pview-problems"><div id="problemsList"></div></div>
+          <div class="pview hidden" id="pview-output"><pre id="outputLog"></pre></div>
+          <div class="pview hidden" id="pview-debug"><pre id="debugLog"></pre></div>
+          <div class="pview" id="pview-terminal">
+            <div id="terminal">
+              <div id="termOut"></div>
+              <div id="termInputLine"><span id="termPrompt"></span><input id="termInput" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" enterkeyhint="send"></div>
+              <div id="termStdinBar" class="hidden">
+                <span id="termStdinHint"></span>
+                <button id="termSendEOF" class="btn-mini">Gönder (⌃D)</button>
+                <button id="termCancel" class="btn-mini secondary">İptal (⌃C)</button>
+              </div>
+            </div>
+          </div>
+          <div class="pview hidden" id="pview-serial">
+            <div class="ser-bar">
+              <button class="btn-mini" id="serConnect"></button>
+              <span class="dim small" id="serState"></span>
+              <span class="flex1"></span>
+              <label class="small"><input type="checkbox" id="serTs"> zaman</label>
+              <label class="small"><input type="checkbox" id="serAuto" checked> otomatik kaydır</label>
+              <i class="codicon codicon-debug-stop pa-btn hidden" id="serStop" title="Durdur (Ctrl-C)"></i>
+              <i class="codicon codicon-clear-all pa-btn" id="serClear" title="Temizle"></i>
+            </div>
+            <div id="serBox"><pre id="serOut"></pre></div>
+            <div class="ser-input">
+              <input id="serIn" placeholder="Karta gönder (Enter)…" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" enterkeyhint="send">
+              <select id="serEol" title="Satır sonu"><option value="lf">LF</option><option value="crlf">CR+LF</option><option value="cr">CR</option><option value="none">yok</option></select>
+            </div>
+          </div>
+          <div class="pview hidden" id="pview-ports"><div class="empty-view"><p class="dim">No forwarded ports.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STATUS BAR ===== -->
+  <div id="statusbar">
+    <div class="sb-left">
+      <div class="sb-item sb-remote" title="Open a Remote Window"><i class="codicon codicon-remote"></i></div>
+      <div class="sb-item" id="sbProblems" title="No Problems"><i class="codicon codicon-error"></i><span id="sbErr">0</span><i class="codicon codicon-warning"></i><span id="sbWarn">0</span></div>
+      <div class="sb-item hidden" id="sbRunning"><i class="codicon codicon-loading codicon-modifier-spin"></i><span id="sbRunningText">Running…</span></div>
+    </div>
+    <div class="sb-right">
+      <div class="sb-item hidden" id="sbCursor">Ln 1, Col 1</div>
+      <div class="sb-item hidden" id="sbIndent">Spaces: 4</div>
+      <div class="sb-item hidden" id="sbEnc">UTF-8</div>
+      <div class="sb-item hidden" id="sbEol">LF</div>
+      <div class="sb-item hidden" id="sbLang"><i class="codicon codicon-bracket"></i><span id="sbLangText">Plain Text</span></div>
+      <div class="sb-item" id="sbRunner" title="Runner"><i class="codicon codicon-cloud"></i><span id="sbRunnerText">Wandbox</span></div>
+      <div class="sb-item" id="sbOffline" title="Offline status"><i class="codicon codicon-cloud-download"></i><span id="sbOfflineText"></span></div>
+      <div class="sb-item" id="sbBell" title="Notifications"><i class="codicon codicon-bell"></i></div>
+    </div>
+  </div>
+</div>
+
+<!-- Overlays -->
+<div id="quickinput" class="hidden">
+  <div class="qi-box">
+    <div class="qi-title hidden" id="qiTitle"></div>
+    <div class="qi-input-wrap"><input id="qiInput" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false"></div>
+    <div class="qi-msg hidden" id="qiMsg"></div>
+    <div class="qi-list" id="qiList"></div>
+  </div>
+</div>
+<div id="menuLayer" class="hidden"></div>
+<div id="notifications"></div>
+<div id="dialog" class="hidden"><div class="dlg-box"><div class="dlg-icon"><i class="codicon codicon-warning"></i></div><div class="dlg-body"><div class="dlg-msg" id="dlgMsg"></div><div class="dlg-detail" id="dlgDetail"></div></div><div class="dlg-buttons" id="dlgButtons"></div></div></div>
+<div id="loadingOverlay"><div class="lo-box"><i class="codicon codicon-loading codicon-modifier-spin"></i><div id="loadingText">Editör yükleniyor…</div></div></div>
+
+<script src="extensions.js"></script>
+<script src="themes.js"></script>
+<script src="git.js"></script>
+<script src="agent.js"></script>
+<script src="vscsync.js"></script>
+<script src="esp32.js"></script>
+<script src="obsidian.js"></script>
+  <script src="settings-ui.js"></script>
+<script src="workbench.js"></script>
+</body>
+</html>
