@@ -141,6 +141,13 @@ final class Bridge: NSObject, WKScriptMessageHandlerWithReply {
                 try ws.writeData(s("path"), d); ok(true)
             case "app.dismissKeyboard":
                 webView?.endEditing(true); ok(true)
+
+            // ---- uygulama ikonu (Ayarlar › iPad › Ekran)
+            case "app.icon.get":
+                DispatchQueue.main.async { ok(AppIconSwitcher.current) }
+            case "app.icon.set":
+                let name = s("name")
+                DispatchQueue.main.async { AppIconSwitcher.set(name) { e in if let e { fail(e) } else { ok(AppIconSwitcher.current) } } }
             default:
                 fail("unknown command: \(cmd)")
             }
@@ -423,5 +430,27 @@ enum Keychain {
     static func delete(_ key: String) {
         if let g = sharedGroup { SecItemDelete(query(key, group: g) as CFDictionary) }
         SecItemDelete(query(key, group: nil) as CFDictionary)
+    }
+}
+
+// MARK: Uygulama ikonu
+/// "auto"  → varsayılan AppIcon: açık temada K3, koyu temada K2 (iOS 18+ cihaz temasını kendisi izler)
+/// "dark" / "light" / "line" → sabit alternatif ikon (AppIcon-Dark / -Light / -Line)
+enum AppIconSwitcher {
+    static let names = ["dark": "AppIcon-Dark", "light": "AppIcon-Light", "line": "AppIcon-Line"]
+
+    static var current: String {
+        guard let n = UIApplication.shared.alternateIconName else { return "auto" }
+        return names.first { $0.value == n }?.key ?? "auto"
+    }
+
+    static func set(_ key: String, done: @escaping (String?) -> Void) {
+        guard UIApplication.shared.supportsAlternateIcons else { done("Bu cihaz alternatif ikonları desteklemiyor"); return }
+        let target = key == "auto" ? nil : names[key]
+        if key != "auto" && target == nil { done("Bilinmeyen ikon: \(key)"); return }
+        if UIApplication.shared.alternateIconName == target { done(nil); return }
+        UIApplication.shared.setAlternateIconName(target) { err in
+            DispatchQueue.main.async { done(err?.localizedDescription) }
+        }
     }
 }

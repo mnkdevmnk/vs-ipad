@@ -3259,6 +3259,8 @@ async function boot() {
   syncRunControls();
   renderExtensions();
   PetsUI.apply();
+  // uygulama ikonu: iPadOS'taki gerçek durumu ayara yansıt (yeniden kurulumda iOS varsayılana döner)
+  native('app.icon.get').then((v) => { if (v && SET.appIcon !== v) { SET.appIcon = v; saveSettings(); } }).catch(() => {});
   Term.init();
   const wantPanel = SET.panel, wantSide = SET.sidebar;
   Panel.show(Panel.current);

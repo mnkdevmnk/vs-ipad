@@ -103,6 +103,7 @@ function buildSchema() {
   add(I, 'Apple Pencil', 'ipad.pencil.template', { key: 'notebookTemplate', type: 'enum', opts: [['lined', 'Çizgili'], ['grid', 'Kareli'], ['dotted', 'Noktalı'], ['blank', 'Boş']], def: 'lined', d: '"Yeni Not Defteri" ve "Sayfa ekle" için varsayılan şablon.' });
   add(I, 'Apple Pencil', 'ipad.pencil.pages', { key: 'notebookPages', type: 'number', min: 1, max: 50, def: 3, d: 'Yeni not defterinin sayfa sayısı.' });
   add(I, 'Ekran', 'ipad.statusBarColor', { key: 'chromeSync', type: 'bool', def: true, d: 'iPad durum çubuğunun (saat, pil) rengini temaya uydurur.', apply: (C) => C.applyAll() });
+  add(I, 'Ekran', 'ipad.appIcon', { key: 'appIcon', type: 'enum', opts: [['auto', 'Otomatik (iPad temasına göre)'], ['dark', 'Koyu'], ['light', 'Açık'], ['line', 'Çizgi']], def: 'auto', common: true, d: 'Ana ekrandaki uygulama ikonu. Otomatik: iPad açık temadayken açık, koyu temadayken koyu ikon (iPadOS 18+). Değiştirince iPadOS bir onay mesajı gösterir.', apply: (C) => C.native('app.icon.set', { name: C.SET.appIcon }).catch((e) => C.notify('error', 'İkon değiştirilemedi: ' + (e && e.message || e))) });
   add(I, 'Ekran', 'ipad.reduceMotion', { key: 'reduceMotion', type: 'bool', def: false, d: 'Animasyonları azaltır (pil tasarrufu).', apply: () => document.body.classList.toggle('reduce-motion', !!window.__vsSET.reduceMotion) });
 
   // ---- Uzantılar (dinamik)
